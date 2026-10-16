@@ -8,7 +8,9 @@ MODELO = "gemini-3.6-flash"
 URL_BASE = "https://generativelanguage.googleapis.com/v1beta/models/"
 
 #Funcion para crear la solicitud
-def crear_solicitud(pregunta):
+def armar_solicitud(pregunta):
+    if not pregunta:
+        raise ValueError("La pregunta no puede estar vacía")
     url = f"{URL_BASE}{MODELO}:generateContent?key={API_KEY}"
     body = {
         "contents":
@@ -18,16 +20,30 @@ def crear_solicitud(pregunta):
 
 #Funcion para envíar la petición
 def enviar_peticion(url, body):
-    respuesta = requests.post(url, json=body)
-    return respuesta.json()
+    try:
+        respuesta = requests.post(url, json=body)
+    except requests.exceptions.ConnectionError:
+        raise RuntimeError("No se pudo conectar con el servicio. Intenta de nuevo en unos segundos.")
+    try:
+        return respuesta.json()
+    except requests.exceptions.JSONDecodeError:
+     	raise RuntimeError("La respuesta del servicio no llegó en el formato esperado.")
+    
 
 #Funcion procesa y extrae dato
 def extraer_texto(datos):
-    return datos["candidates"][0]["content"]["parts"][0]["text"]
+    try:
+        return datos["candidates"][0]["content"]["parts"][0]["text"]
+    except (KeyError, IndexError):
+     	raise RuntimeError("La respuesta no trae el texto generado en el lugar esperado.")
 
 def obtener_dato_de_prueba(pregunta):
-    url, body = crear_solicitud(pregunta)
+    url, body = armar_solicitud(pregunta)
     datos = enviar_peticion(url, body)
     return extraer_texto(datos)
 
-print(obtener_dato_de_prueba("Confirma en una frase corta que esta conexión  funciona"))
+try:
+     resultado = obtener_dato_de_prueba("Confirma en una frase corta que esta conexión  funciona")
+     print(resultado)
+except (ValueError, RuntimeError) as error:
+     print("No se pudo completar la operación:", error)
