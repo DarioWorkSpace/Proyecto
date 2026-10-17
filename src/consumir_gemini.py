@@ -21,14 +21,18 @@ def armar_solicitud(pregunta):
 #Funcion para envíar la petición
 def enviar_peticion(url, body):
     try:
-        respuesta = requests.post(url, json=body)
+        respuesta = requests.post(url, json=body, timeout=30)
     except requests.exceptions.ConnectionError:
         raise RuntimeError("No se pudo conectar con el servicio. Intenta de nuevo en unos segundos.")
+
+    if respuesta.status_code != 200:
+            raise RuntimeError(f"Error en la petición.Status Code: {respuesta.status_code}") 
+    
     try:
         return respuesta.json()
     except requests.exceptions.JSONDecodeError:
      	raise RuntimeError("La respuesta del servicio no llegó en el formato esperado.")
-    
+       
 
 #Funcion procesa y extrae dato
 def extraer_texto(datos):
@@ -47,3 +51,4 @@ try:
      print(resultado)
 except (ValueError, RuntimeError) as error:
      print("No se pudo completar la operación:", error)
+     
