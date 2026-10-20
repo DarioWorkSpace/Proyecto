@@ -2,6 +2,8 @@ import os
 import requests
 from dotenv import load_dotenv
 
+import time
+
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
 MODELO = "gemini-3.6-flash"
@@ -43,12 +45,30 @@ def extraer_texto(datos):
 
 def obtener_dato_de_prueba(pregunta):
     url, body = armar_solicitud(pregunta)
+    inicio = time.perf_counter() #Empezar contador
     datos = enviar_peticion(url, body)
+    fin = time.perf_counter() #Detener contador
+    latencia = fin - inicio
+    print(f"Latencia: {latencia:.2f} segundos") #.2f para mostrar solo 2 decimales
+    costo = calcular_costo(datos, 0.00000075, 0.00000375)
+    print(f"Costo estimado de la operación: ${costo:.6f} USD")
     return extraer_texto(datos)
+
+def calcular_costo(datos, precio_entrada, precio_salida):
+    uso = datos["usageMetadata"]
+    tokens_entrada = uso["promptTokenCount"]
+    tokens_salida = uso["candidatesTokenCount"]
+    tokens_razonamiento = uso.get("thoughtsTokenCount", 0)
+    costo = (
+        tokens_entrada * precio_entrada
+        + (tokens_salida + tokens_razonamiento) * precio_salida
+    )
+    return costo
 
 try:
      resultado = obtener_dato_de_prueba("Confirma en una frase corta que esta conexión  funciona")
      print(resultado)
 except (ValueError, RuntimeError) as error:
      print("No se pudo completar la operación:", error)
-     
+
+
