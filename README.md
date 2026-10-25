@@ -3,17 +3,25 @@
 Esta es la estructura base que vas a usar como punto de partida para tu proyecto en este programa. Es la misma estructura que vas a ir ampliando bloque a bloque, hasta llegar a la aplicación completa que entregas en el Gate 3.
 
 ## Requisitos Previos
+Para poder ejecutar este proyecto necesitas tener instalado y configurado lo siguiente:
 
+1.  **Python 3.10 o superior:** Verifica con `python --version`. El proyecto usa `venv` y librerías compatibles con Python 3.10+.
+2.  **Git:** Necesario para clonar el repositorio y versionar el código.
+3.  **Cuenta en Google AI Studio:** Para obtener tu `GEMINI_API_KEY` gratis desde https://aistudio.google.com/app/apikey
+4.  **Visual Studio Code (recomendado):** Con la extensión de Python.
+5.  **Acceso a terminal:** PowerShell en Windows o bash/zsh en Linux/Mac para activar el entorno virtual.
+
+No necesitas instalar librerías globalmente, todo se instala dentro del entorno virtual con `requirements.txt`.
 
 ## Cómo empezar
 
 Estos pasos se completan de forma progresiva a lo largo de la Unidad U1.2, no todos el mismo día:
 
-1. Clona este repositorio utilizando el comando "git clone <url-del-repositorio>"
+1. Clona este repositorio utilizando el comando "git clone <https://github.com/DarioWorkSpace/Proyecto>"
 2. Crea tu entorno virtual de Python usando <python -m venv venv> (por ejemplo, con `venv`) y actívalo en tu terminal usando el comando <venv/bin/activate> o <venv/Scripts/activate> segun tu equipo.
 3. Instala las dependencias del proyecto usando el comando <pip install - r requirements.txt> para poder usarlas en la aplicacion.
 4. Copia `.env.example` a un archivo nuevo llamado `.env` usando el comando <cp .env.example .env>, y completa ahí usando tu API.
-5. Para ejecutar la aplicacion usa el comando <python src/consumir_gemini.py> (o el archivo que quieras ejecutar)
+5. Para ejecutar la aplicacion usa el comando <python src/consumir_gemini.py>, <python src/evaluar_modelo.py> o <python src/consistencia.py>
 
 ## Estructura de carpetas
 

@@ -49,7 +49,7 @@
   ## Justificación
   Elegimos el modelo <gemini-3.5-flash-lite> por que para nuestra aplicacion se necesita velocidad de respuesta y presición de respuesta.
   Lo que observe en las pruebas fue que: 
-  El modelo <gemini-3.8-flash> no proceso ninguna solicitud cayendo en el try/except fallando en las consultas y dando errores de 443. 
+  El modelo <gemini-3.8-flash> no proceso ninguna solicitud cayendo en el try/except fallando en las consultas y dando errores de 443 y 503. 
   El modelo <gemini-3.1-flash-lite-preview> fue muy eficiente, pero en la pregunta compleja se explayó demasiado pese a que se condicionó la pregunta con *system_instruction*.
   El modelo <gemini-3.5-flash-lite> fue el mas óptimo dado que demoro menos en comparación al modelo <gemini-3.1-flash-lite-preview> y respondió acorde al *system_instruction* requerido.
   El criterio más relevante para mi desición fue la presición de las respuestas.
@@ -61,5 +61,5 @@
   ## Limitación del modelo elegido
   Una limitación  que encontré en mi elección fue la capacidad de razonamiento, dado que es una version mas antigua que los otros modelos de las pruebas, además del costo de tokens al momento de realizar la petición, si bien en relacion *Precisión, Latencia y Costo* no se puede obtener todos los criterios, cumplió a la presición con dos de dichos criteros, el *Costo* es criterio limitante frente a otros tipos de modelos .
   ## Alternativa descartada y por qué
-  Descarté los modelos <gemini-3.8-flash> dado que al realizar peticiones sencillas este no procesaba todas las peticiones que se le realizaban por problemas de "conexion segura con el trafico https", lo que dificulta y condiciona demasiado la conexión de mi aplicación, el modelo <gemini-3.1.flash-lite-preview> por la única razón que se descartó, fue por que se explayó demasiado para responder en comparación del modelo elejido, además de demorarse unos segundos más en la medición promedia. 
+  Descarté los modelos <gemini-3.8-flash> dado que al realizar peticiones este no procesaba todas las peticiones que se le realizaban por problemas de "conexion segura con el trafico https", lo que dificulta y condiciona demasiado la conexión de mi aplicación, el modelo <gemini-3.1.flash-lite-preview> por la única razón que se descartó, fue por que se explayó demasiado para responder en comparación del modelo elejido, además de demorarse unos segundos más en la medición promedia. 
   Las pruebas se pueden observar en <src/resultado_evaluacion_modelo.json>.
