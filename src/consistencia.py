@@ -1,6 +1,6 @@
 import json
 import time
-from banco.py import BANCO_DE_PROMPT
+from banco import BANCO_DE_PROMPT
 from consumir_gemini import armar_solicitud, enviar_peticion, extraer_texto, parsear_respuesta_json
 
 registro = {}
@@ -10,7 +10,7 @@ try:
         exitos = 0
         intentos = 3
         for inteto in range (intentos):
-            url, body = armar_solicitud( prompt["ejemplo_usuario"], "gemini-3.1-flash-lite", prompt["system_instruction"], prompt["response_schema"] )
+            url, body = armar_solicitud( prompt["ejemplo_usuario"], "gemini-3.5-flash-lite", prompt["system_instruction"], prompt["response_schema"] )
             respuesta = enviar_peticion(url, body)
             texto = extraer_texto(respuesta)
             try:

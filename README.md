@@ -9,7 +9,7 @@ Esta es la estructura base que vas a usar como punto de partida para tu proyecto
 
 Estos pasos se completan de forma progresiva a lo largo de la Unidad U1.2, no todos el mismo día:
 
-1. Cona este repositorio utilizando el comando "git clone <url-del-repositorio>"
+1. Clona este repositorio utilizando el comando "git clone <url-del-repositorio>"
 2. Crea tu entorno virtual de Python usando <python -m venv venv> (por ejemplo, con `venv`) y actívalo en tu terminal usando el comando <venv/bin/activate> o <venv/Scripts/activate> segun tu equipo.
 3. Instala las dependencias del proyecto usando el comando <pip install - r requirements.txt> para poder usarlas en la aplicacion.
 4. Copia `.env.example` a un archivo nuevo llamado `.env` usando el comando <cp .env.example .env>, y completa ahí usando tu API.

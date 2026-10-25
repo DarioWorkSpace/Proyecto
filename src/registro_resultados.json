@@ -1,0 +1,10 @@
+{
+  "simple": {
+    "exitos": 3,
+    "intentos": 3
+  },
+  "compleja": {
+    "exitos": 3,
+    "intentos": 3
+  }
+}
