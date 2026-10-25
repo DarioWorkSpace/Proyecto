@@ -1,0 +1,170 @@
+[
+  {
+    "modelo": "gemini-3.1-flash-lite-preview",
+    "intento": 1,
+    "respuesta": "{\n  \"platos\": [\n    \"Ceviche de corvina, lima, cebolla morada, cilantro y chile habanero fresco.\",\n    \"Risotto de setas, arroz arborio, boletus edulis, queso parmesano y aceite trufado.\",\n    \"Solomillo al vino, carne de ternera, reducción de vino tinto y patatas baby.\"\n  ],\n  \"recomendado\": \"El risotto de setas es el plato estrella por su textura cremosa e intensa.\"\n}",
+    "latencia": 3.7661415000038687,
+    "costo": 0.00045975000000000003
+  },
+  {
+    "modelo": "gemini-3.1-flash-lite-preview",
+    "intento": 2,
+    "respuesta": "{\n  \"platos\": [\n    \"Ensalada Caprese: Tomate, mozzarella fresca, albahaca y aceite de oliva virgen extra.\",\n    \"Salmón al horno: Filete de salmón, espárragos trigueros, limón y eneldo fresco.\",\n    \"Tiramisú casero: Mascarpone, café espresso, bizcochos de soletilla y cacao puro.\"\n  ],\n  \"recomendado\": \"El salmón al horno es nuestra especialidad más saludable y deliciosa.\"\n}",
+    "latencia": 5.80730100000801,
+    "costo": 0.000486
+  },
+  {
+    "modelo": "gemini-3.1-flash-lite-preview",
+    "intento": 3,
+    "respuesta": "{\n  \"platos\": [\n    \"Ensalada César: lechuga romana, crutones, queso parmesano, pechuga de pollo y aderezo especial.\",\n    \"Salmón a la parrilla: filete de salmón fresco, espárragos trigueros, limón y reducción de eneldo.\",\n    \"Tiramisú casero: bizcocho, café espresso, crema de mascarpone, cacao en polvo y un toque licor.\"\n  ],\n  \"recomendado\": \"El salmón a la parrilla es nuestra especialidad más fresca y equilibrada.\"\n}",
+    "latencia": 3.187690799997654,
+    "costo": 0.00054225
+  },
+  {
+    "modelo": "gemini-3.1-flash-lite-preview",
+    "intento": 4,
+    "respuesta": "{\n  \"platos\": [\n    \"Ceviche fresco, pescado blanco, lima, cebolla morada, cilantro y ají limo.\",\n    \"Risotto trufado, arroz arbóreo, setas boletus, caldo de verduras, parmesano y mantequilla.\",\n    \"Salmón a la plancha, lomo de salmón, espárragos trigueros, aceite de oliva y sal.\"\n  ],\n  \"recomendado\": \"El risotto trufado es nuestra especialidad más aclamada por los clientes.\"\n}",
+    "latencia": 2.367080200012424,
+    "costo": 0.0004935
+  },
+  {
+    "modelo": "gemini-3.5-flash-lite",
+    "intento": 1,
+    "respuesta": "{\n  \"platos\": [\n    \"Ensalada César: lechuga romana, pollo a la parrilla, crutones, queso parmesano, aderezo César.\",\n    \"Risotto de Hongos: arroz arborio, champiñones, caldo de verduras, mantequilla, queso parmesano.\",\n    \"Salmón al Horno: filete de salmón, limón, ajo, aceite de oliva, espárragos frescos.\"\n  ],\n  \"recomendado\": \"El risotto de hongos es el más recomendado por su textura cremosa y sabor intenso.\"\n}",
+    "latencia": 2.29246989999956,
+    "costo": 0.000516
+  },
+  {
+    "modelo": "gemini-3.5-flash-lite",
+    "intento": 2,
+    "respuesta": "{\n  \"platos\": [\n    \"Sopa de tomate, tomates frescos, albahaca, ajo y aceite de oliva virgen.\",\n    \"Risotto de setas, arroz arborio, champiñones, caldo de verduras y queso parmesano.\",\n    \"Salmón al horno, filete de salmón, limón, eneldo, mantequilla y espárragos verdes.\"\n  ],\n  \"recomendado\": \"El risotto de setas es la opción más recomendada por su sabor cremoso.\"\n}",
+    "latencia": 2.396466499994858,
+    "costo": 0.000471
+  },
+  {
+    "modelo": "gemini-3.5-flash-lite",
+    "intento": 3,
+    "respuesta": "{\n  \"platos\": [\n    \"Ensalada César: lechuga romana, pollo a la parrilla, crutones, queso parmesano y aderezo especial.\",\n    \"Lasaña Boloñesa: pasta fresca, carne picada de res, salsa de tomate, bechamel y queso gratinado.\",\n    \"Tarta de Manzana: base de hojaldre crujiente, manzanas laminadas, canela y un toque de mermelada.\"\n  ],\n  \"recomendado\": \"La Lasaña Boloñesa es la opción más recomendada por su sabor casero y irresistible.\"\n}",
+    "latencia": 2.406607199998689,
+    "costo": 0.00055725
+  },
+  {
+    "modelo": "gemini-3.5-flash-lite",
+    "intento": 4,
+    "respuesta": "{\n  \"platos\": [\n    \"Paella Valenciana, arroz, pollo, conejo, judías verdes, azafrán.\",\n    \"Salmón al Horno, salmón fresco, limón, eneldo, aceite de oliva.\",\n    \"Tarta de Queso, queso crema, galleta, mantequilla, azúcar, frutos rojos.\"\n  ],\n  \"recomendado\": \"El plato más recomendado es la Paella Valenciana por su sabor tradicional.\"\n}",
+    "latencia": 3.3597292000049492,
+    "costo": 0.0004335
+  },
+  {
+    "modelo": "gemini-3.8-flash",
+    "intento": 1,
+    "respuesta": "ERROR: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+    "latencia": 0,
+    "costo": 0
+  },
+  {
+    "modelo": "gemini-3.8-flash",
+    "intento": 2,
+    "respuesta": "ERROR: Error en la petición.Status Code: 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+    "latencia": 0,
+    "costo": 0
+  },
+  {
+    "modelo": "gemini-3.8-flash",
+    "intento": 3,
+    "respuesta": "ERROR: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+    "latencia": 0,
+    "costo": 0
+  },
+  {
+    "modelo": "gemini-3.8-flash",
+    "intento": 4,
+    "respuesta": "ERROR: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+    "latencia": 0,
+    "costo": 0
+  },
+  {
+    "modelo": "gemini-3.1-flash-lite-preview",
+    "intento": 1,
+    "respuesta": "{\n  \"platos\": [\n    \"Ensalada mediterránea: Tomate, pepino, cebolla, aceitunas, queso feta, aceite de oliva, orégano\",\n    \"Pasta a la carbonara: Spaghetti, huevo, guanciale, queso pecorino, pimienta negra\",\n    \"Pollo al limón: Pechuga de pollo, zumo de limón, ajo, perejil, aceite de oliva\"\n  ],\n  \"recomendado\": \"Pasta a la carbonara: gluten. Ensalada mediterránea y Pollo al limón: ninguno.\"\n}",
+    "latencia": 2.2924384999932954,
+    "costo": 0.0005355000000000001
+  },
+  {
+    "modelo": "gemini-3.1-flash-lite-preview",
+    "intento": 2,
+    "respuesta": "{\n  \"platos\": [\n    \"Ensalada mixta: lechuga, tomate, cebolla, aceite, vinagre\",\n    \"Pasta a la carbonara: espagueti, huevo, panceta, queso, pimienta\",\n    \"Pescado al horno: merluza, patatas, ajo, perejil, limón\"\n  ],\n  \"recomendado\": \"Recomendados: Ensalada y Pescado. No recomendado: Pasta. Ingrediente afectante: Trigo.\"\n}",
+    "latencia": 2.1616874000028474,
+    "costo": 0.00048675
+  },
+  {
+    "modelo": "gemini-3.1-flash-lite-preview",
+    "intento": 3,
+    "respuesta": "{\n  \"platos\": [\n    \"Ensalada mediterránea: Tomate, pepino, cebolla, aceitunas, queso feta, aceite de oliva, orégano, sal.\",\n    \"Pasta a la carbonara: Espaguetis de trigo, huevo, panceta, queso pecorino, pimienta negra, sal.\",\n    \"Salmón al horno: Salmón, patatas, espárragos, limón, aceite de oliva, ajo, perejil, sal.\"\n  ],\n  \"recomendado\": \"No recomiendo la Pasta a la carbonara por el trigo. Recomiendo la Ensalada mediterránea y el Salmón al horno. El ingrediente que te afecta es el trigo.\"\n}",
+    "latencia": 2.567689200004679,
+    "costo": 0.0006517500000000001
+  },
+  {
+    "modelo": "gemini-3.1-flash-lite-preview",
+    "intento": 4,
+    "respuesta": "{\n  \"platos\": [\n    \"Ensalada caprese: tomate, mozzarella, albahaca, aceite, sal\",\n    \"Pasta a la carbonara: espaguetis, huevo, guanciale, queso pecorino, pimienta\",\n    \"Pollo al limón: pechuga de pollo, limón, ajo, perejil, mantequilla\"\n  ],\n  \"recomendado\": \"No recomiendo pasta a la carbonara por el trigo. Recomiendo ensalada caprese y pollo al limón.\"\n}",
+    "latencia": 2.221153399994364,
+    "costo": 0.00048675
+  },
+  {
+    "modelo": "gemini-3.5-flash-lite",
+    "intento": 1,
+    "respuesta": "{\n  \"platos\": [\n    \"Pasta Carbonara con espaguetis de trigo y bacon\",\n    \"Ensalada César con pollo y picatostes de pan\",\n    \"Risotto de setas con parmesano y caldo\"\n  ],\n  \"recomendado\": \"Trigo\"\n}",
+    "latencia": 2.0119095999980345,
+    "costo": 0.00030675
+  },
+  {
+    "modelo": "gemini-3.5-flash-lite",
+    "intento": 2,
+    "respuesta": "{\n  \"platos\": [\n    \"Ensalada César: lechuga, pollo, crutones, parmesano, aderezo\",\n    \"Pasta boloñesa: fideos de trigo, carne picada, tomate, cebolla, ajo, albahaca\",\n    \"Salmón al horno: salmón, limón, aceite de oliva, espárragos, sal\"\n  ],\n  \"recomendado\": \"Pasta boloñesa\"\n}",
+    "latencia": 2.5208604999934323,
+    "costo": 0.00044175
+  },
+  {
+    "modelo": "gemini-3.5-flash-lite",
+    "intento": 3,
+    "respuesta": "{\n  \"platos\": [\n    \"Sopa de trigo, pollo y zanahoria\",\n    \"Ensalada de quinoa con tomate y aguacate\",\n    \"Pasta con salsa de tomate y albahaca\"\n  ],\n  \"recomendado\": \"trigo\"\n}",
+    "latencia": 2.6130747999995947,
+    "costo": 0.00029175
+  },
+  {
+    "modelo": "gemini-3.5-flash-lite",
+    "intento": 4,
+    "respuesta": "{\n  \"platos\": [\n    \"Pasta Carbonara: pasta, huevo, panceta, queso pecorino, pimienta negra, sal\",\n    \"Ensalada César: lechuga romana, pollo, picatostes, queso parmesano, salsa césar\",\n    \"Tacos de Pescado: pescado, tortillas de maíz, repollo, cilantro, lima, salsa blanca\"\n  ],\n  \"recomendado\": \"gluten\"\n}",
+    "latencia": 2.8320542000001296,
+    "costo": 0.00042675
+  },
+  {
+    "modelo": "gemini-3.8-flash",
+    "intento": 1,
+    "respuesta": "ERROR: Error en la petición.Status Code: 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+    "latencia": 0,
+    "costo": 0
+  },
+  {
+    "modelo": "gemini-3.8-flash",
+    "intento": 2,
+    "respuesta": "ERROR: Error en la petición.Status Code: 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+    "latencia": 0,
+    "costo": 0
+  },
+  {
+    "modelo": "gemini-3.8-flash",
+    "intento": 3,
+    "respuesta": "ERROR: Error en la petición.Status Code: 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+    "latencia": 0,
+    "costo": 0
+  },
+  {
+    "modelo": "gemini-3.8-flash",
+    "intento": 4,
+    "respuesta": "ERROR: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+    "latencia": 0,
+    "costo": 0
+  }
+]
