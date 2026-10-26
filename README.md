@@ -17,7 +17,7 @@ No necesitas instalar librerías globalmente, todo se instala dentro del entorno
 
 Estos pasos se completan de forma progresiva a lo largo de la Unidad U1.2, no todos el mismo día:
 
-1. Clona este repositorio utilizando el comando "git clone https://github.com/DarioWorkSpace/Proyecto"
+1. Clona este repositorio utilizando el comando "git clone https://github.com/DarioWorkSpace/Proyecto.git"
 2. Crea tu entorno virtual de Python usando el comando <python -m venv venv> (por ejemplo, con `venv`) y actívalo en tu terminal usando el comando <venv/bin/activate> o <venv/Scripts/activate> segun tu equipo.
 3. Instala las dependencias del proyecto usando el comando <pip install - r requirements.txt> para poder usarlas en la aplicacion.
 4. Copia `.env.example` a un archivo nuevo llamado `.env` usando el comando <cp .env.example .env>, y completa ahí usando tu API.
@@ -41,6 +41,6 @@ Estos pasos se completan de forma progresiva a lo largo de la Unidad U1.2, no to
 ## Registro del ensayo de instalación limpia
  
 - Fecha: 25/10/2026
-- Encontrado: faltaba 'requests' en requirements.txt (estaba instalado a mano)
-- Corregido: agregado con 'pip freeze > requirements.txt' y commiteado
-- Resultado tras la corrección: el proyecto corre sin intervención manual
+- Encontrado: El link del repositorio estaba mal puesto
+- Corregido: Se agrego el link adecuado con .git
+- Resultado tras la corrección: El proyecto funciono satisfactoriamente
