@@ -17,11 +17,11 @@ No necesitas instalar librerías globalmente, todo se instala dentro del entorno
 
 Estos pasos se completan de forma progresiva a lo largo de la Unidad U1.2, no todos el mismo día:
 
-1. Clona este repositorio utilizando el comando "git clone <https://github.com/DarioWorkSpace/Proyecto>"
-2. Crea tu entorno virtual de Python usando <python -m venv venv> (por ejemplo, con `venv`) y actívalo en tu terminal usando el comando <venv/bin/activate> o <venv/Scripts/activate> segun tu equipo.
+1. Clona este repositorio utilizando el comando "git clone https://github.com/DarioWorkSpace/Proyecto"
+2. Crea tu entorno virtual de Python usando el comando <python -m venv venv> (por ejemplo, con `venv`) y actívalo en tu terminal usando el comando <venv/bin/activate> o <venv/Scripts/activate> segun tu equipo.
 3. Instala las dependencias del proyecto usando el comando <pip install - r requirements.txt> para poder usarlas en la aplicacion.
 4. Copia `.env.example` a un archivo nuevo llamado `.env` usando el comando <cp .env.example .env>, y completa ahí usando tu API.
-5. Para ejecutar la aplicacion usa el comando <python src/consumir_gemini.py>, <python src/evaluar_modelo.py> o <python src/consistencia.py>
+5. Para ejecutar la aplicacion usa el comando <python src/consumir_gemini.py> para hacer la consulta a la api de gemini, <python src/evaluar_modelo.py> para evaluar los datos de latencia y costo en los modelos elejidos o <python src/consistencia.py> para ejecutar el banco de prompts
 
 ## Estructura de carpetas
 
@@ -40,7 +40,7 @@ Estos pasos se completan de forma progresiva a lo largo de la Unidad U1.2, no to
 
 ## Registro del ensayo de instalación limpia
  
-- Fecha: 2026-09-08
+- Fecha: 25/10/2026
 - Encontrado: faltaba 'requests' en requirements.txt (estaba instalado a mano)
 - Corregido: agregado con 'pip freeze > requirements.txt' y commiteado
 - Resultado tras la corrección: el proyecto corre sin intervención manual

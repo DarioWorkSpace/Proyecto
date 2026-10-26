@@ -128,4 +128,8 @@ def parsear_respuesta_json(texto, claves_requeridas=None):
 
 
 
-#if __name__ == "__main__":
+if __name__ == "__main__":
+    try:
+        print(obtener_dato_de_prueba("Confirma en una frase corta que esta conexión funciona", "gemini-3.5-flash-lite", system_instruction="Se breve y conciso", response_schema=None))
+    except Exception as error:
+        print(f"No se pudo completar: {error}")
