@@ -4,6 +4,7 @@ from typing import Callable, Any
 
 from src.consumir_gemini import armar_solicitud, extraer_texto, enviar_peticion
 
+modelo1="gemini-3.6-flash"
 def con_reintento(funcion: Callable[[], Any],intentos: int = 3,espera_base: float = 2,espera_maxima: float = 30,) -> Any:
     for intento in range(1, intentos + 1):
         try:
@@ -32,7 +33,7 @@ def registrar_costo(respuesta: dict) -> float:
  
  
 def consultar_modelo(pregunta: str, system_instruction: str = "") -> str:
-    url, cuerpo = armar_solicitud(pregunta, "gemini-flash-3.6-flash", system_instruction)
+    url, cuerpo = armar_solicitud(pregunta, modelo1, system_instruction)
     try:
       respuesta = con_reintento(lambda: enviar_peticion(url, cuerpo))
     except TimeoutError:
