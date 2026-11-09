@@ -45,7 +45,7 @@ def armar_solicitud(pregunta, modelo ,system_instruction ,response_schema=None):
 #Funcion para envíar la petición
 def enviar_peticion(url, body):
     try:
-        respuesta = requests.post(url, json=body, timeout=30)
+        respuesta = requests.post(url, json=body, timeout=(10,90))
     except requests.exceptions.ConnectionError:
         raise RuntimeError("No se pudo conectar con el servicio. Intenta de nuevo en unos segundos.")
 

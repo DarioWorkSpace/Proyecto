@@ -2,9 +2,9 @@ import time
 import random
 from typing import Callable, Any
 
-from src.consumir_gemini import armar_solicitud, extraer_texto, enviar_peticion
+from consumir_gemini import armar_solicitud, extraer_texto, enviar_peticion
 
-modelo1="gemini-3.6-flash"
+modelo1="gemini-3.1-flash-lite"
 def con_reintento(funcion: Callable[[], Any],intentos: int = 3,espera_base: float = 2,espera_maxima: float = 30,) -> Any:
     for intento in range(1, intentos + 1):
         try:
@@ -33,9 +33,9 @@ def registrar_costo(respuesta: dict) -> float:
  
  
 def consultar_modelo(pregunta: str, system_instruction: str = "") -> str:
-    url, cuerpo = armar_solicitud(pregunta, modelo1, system_instruction)
+    url, body = armar_solicitud(pregunta, modelo1, system_instruction)
     try:
-      respuesta = con_reintento(lambda: enviar_peticion(url, cuerpo))
+      respuesta = con_reintento(lambda: enviar_peticion(url, body))
     except TimeoutError:
       raise RuntimeError("El servicio no respondió tras varios intentos. Intenta más tarde.")
     registrar_costo(respuesta)

@@ -1,0 +1,222 @@
+[
+  {
+    "consulta": "¿Qué plato puedo comer si soy celíaco?",
+    "respuesta": "Puedes comer cualquier alimento natural que no contenga gluten, como carnes, verduras o arroz.",
+    "precision": 0.0,
+    "cobertura": 0.0,
+    "f1": 0.0,
+    "correccion_factual": "no",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Dice 'cualquier alimento natural' sin advertir contaminación cruzada ni certificación. Da categorías, no un plato concreto como la referencia."
+  },
+  {
+    "consulta": "¿Qué snack es seguro si tengo alergia al maní?",
+    "respuesta": "Las palomitas de maíz naturales son una opción segura si no contienen trazas.",
+    "precision": 0.0,
+    "cobertura": 0.0,
+    "f1": 0.0,
+    "correccion_factual": "parcialmente",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Las palomitas pueden ser seguras si no tienen trazas, y eso lo dice bien. El F1 da 0.0 porque no coincide con la referencia, no porque esté mal. Es un ejemplo válido distinto."
+  },
+  {
+    "consulta": "¿Qué plato recomiendas si tengo diabetes tipo 2?",
+    "respuesta": "Prioriza verduras frescas, proteínas magras y granos integrales para controlar tus niveles de glucosa.",
+    "precision": 0.21428571428571427,
+    "cobertura": 0.17647058823529413,
+    "f1": 0.19,
+    "correccion_factual": "parcialmente",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Verduras y proteína magra están bien, pero 'granos integrales' sin hablar de porción puede subir la glucosa. Le faltó control de porciones."
+  },
+  {
+    "consulta": "¿Qué colación puedo llevar al colegio si soy alérgico a los frutos secos?",
+    "respuesta": "Una fruta fresca o un yogur son opciones seguras, nutritivas y libres de alérgenos.",
+    "precision": 0.21428571428571427,
+    "cobertura": 0.1875,
+    "f1": 0.2,
+    "correccion_factual": "parcialmente",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Fruta y yogur pueden ser seguros, pero no todos los yogures son libres de alérgenos. Debió decir 'verificar que sea sin frutos secos ni trazas'."
+  },
+  {
+    "consulta": "¿El chocolate tiene gluten o trazas de maní?",
+    "respuesta": "El chocolate puro no contiene gluten, pero puede presentar trazas de maní por contaminación cruzada.",
+    "precision": 0.26666666666666666,
+    "cobertura": 0.18181818181818182,
+    "f1": 0.21,
+    "correccion_factual": "parcialmente",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Es verdad que el chocolate puro no tiene gluten y puede tener trazas de maní. Le faltó decir que algunos chocolates sí tienen gluten añadido y que hay que revisar la etiqueta."
+  },
+  {
+    "consulta": "¿Qué desayuno es seguro si soy alérgico al huevo?",
+    "respuesta": "Puedes desayunar avena con frutas, yogur, tostadas con aguacate o batidos naturales.",
+    "precision": 0.25,
+    "cobertura": 0.2,
+    "f1": 0.22,
+    "correccion_factual": "parcialmente",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "La avena con fruta está bien, pero el yogur y las tostadas son riesgosos si no se verifica que no tengan huevo ni trazas. No especificó eso."
+  },
+  {
+    "consulta": "¿La salsa de soya tiene gluten?",
+    "respuesta": "La mayoría de las salsas de soya contienen gluten derivado del trigo utilizado.",
+    "precision": 0.3076923076923077,
+    "cobertura": 0.2857142857142857,
+    "f1": 0.29,
+    "correccion_factual": "si",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Correcta: la mayoría tiene gluten por el trigo. Le faltó dar la alternativa que pide la referencia: buscar tamari sin gluten."
+  },
+  {
+    "consulta": "¿Puedo comer papas fritas si soy celíaco?",
+    "respuesta": "Solo son aptas si fueron fritas en aceite limpio y sin contaminación cruzada.",
+    "precision": 0.38461538461538464,
+    "cobertura": 0.2631578947368421,
+    "f1": 0.31,
+    "correccion_factual": "si",
+    "completitud": "si",
+    "contradiccion": "no",
+    "nota": "Correcta y completa: solo si el aceite está limpio y sin contaminación cruzada."
+  },
+  {
+    "consulta": "¿Qué es la contaminación cruzada?",
+    "respuesta": "Es la transferencia de contaminantes de un alimento o superficie a otro alimento inocuo.",
+    "precision": 0.2857142857142857,
+    "cobertura": 0.4,
+    "f1": 0.33,
+    "correccion_factual": "parcialmente",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Dice 'contaminantes' en general, pero no dice alérgenos, gluten, utensilios ni superficies. Es demasiado genérica."
+  },
+  {
+    "consulta": "¿Cómo sé si un producto es realmente sin gluten en el supermercado?",
+    "respuesta": "Busca el sello oficial \"sin gluten\" o el símbolo de la espiga barrada en el envase.",
+    "precision": 0.375,
+    "cobertura": 0.3157894736842105,
+    "f1": 0.34,
+    "correccion_factual": "si",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Buscar el sello de la espiga barrada está bien. Le faltó lo otro: leer ingredientes y advertencia de trazas."
+  },
+  {
+    "consulta": "¿Qué postre puedo comer si tengo diabetes tipo 2 y alergia al maní?",
+    "respuesta": "Puedes consumir gelatina sin azúcar o frutas frescas bajas en índice glucémico.",
+    "precision": 0.4166666666666667,
+    "cobertura": 0.3333333333333333,
+    "f1": 0.37,
+    "correccion_factual": "si",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Gelatina sin azúcar y fruta baja en índice glucémico están bien. Le faltó advertir 'sin trazas de maní', que es clave para un alérgico."
+  },
+  {
+    "consulta": "¿Puedo comer sushi si soy celíaco?",
+    "respuesta": "Solo es apto si el arroz no contiene vinagre de gluten y usas tamari.",
+    "precision": 0.5,
+    "cobertura": 0.3181818181818182,
+    "f1": 0.38,
+    "correccion_factual": "parcialmente",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "El tamari está bien, pero lo del 'vinagre de gluten' confunde. El riesgo real es la salsa de soya, el relleno y la contaminación cruzada en la tabla. No lo explicó completo."
+  },
+  {
+    "consulta": "¿Con qué reemplazo la harina de trigo si soy celíaco?",
+    "respuesta": "Puedes usar harinas sin gluten como las de arroz, almendra, maíz o garbanzo.",
+    "precision": 0.46153846153846156,
+    "cobertura": 0.46153846153846156,
+    "f1": 0.46,
+    "correccion_factual": "si",
+    "completitud": "si",
+    "contradiccion": "no",
+    "nota": "Correcta. Dice arroz, almendra y maíz como la referencia y agrega garbanzo, que también es válido sin gluten."
+  },
+  {
+    "consulta": "¿Qué pan puedo comer si soy celíaco y alérgico al huevo?",
+    "respuesta": "Puedes consumir pan elaborado exclusivamente con harinas sin gluten y libre de huevo.",
+    "precision": 0.6153846153846154,
+    "cobertura": 0.4444444444444444,
+    "f1": 0.51,
+    "correccion_factual": "si",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Correcta: pan con harinas sin gluten y sin huevo. Le faltó decir 'certificada sin gluten' como dice la referencia."
+  },
+  {
+    "consulta": "¿La miel es segura para un celíaco?",
+    "respuesta": "Sí, la miel pura es naturalmente libre de gluten y segura para los celíacos.",
+    "precision": 0.5714285714285714,
+    "cobertura": 0.6153846153846154,
+    "f1": 0.59,
+    "correccion_factual": "si",
+    "completitud": "si",
+    "contradiccion": "no",
+    "nota": "Correcta y completa: la miel pura es naturalmente sin gluten y segura."
+  },
+  {
+    "consulta": "¿Ser celíaco es lo mismo que ser alérgico al trigo?",
+    "respuesta": "No, la celiaquía es una enfermedad autoinmune distinta a la alergia al trigo.",
+    "precision": 0.6923076923076923,
+    "cobertura": 0.5294117647058824,
+    "f1": 0.6,
+    "correccion_factual": "si",
+    "completitud": "si",
+    "contradiccion": "no",
+    "nota": "Correcta. Distingue bien: celiaquía es autoinmune, alergia al trigo es reacción alérgica."
+  },
+  {
+    "consulta": "¿Qué puedo comer en un asado si tengo intolerancia a la lactosa?",
+    "respuesta": "Puedes consumir carnes asadas, verduras a la parrilla, ensaladas frescas y embutidos sin lácteos.",
+    "precision": 0.6428571428571429,
+    "cobertura": 0.5625,
+    "f1": 0.6,
+    "correccion_factual": "parcialmente",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Carnes, verduras y ensaladas están bien, pero los embutidos son riesgosos porque muchos tienen lactosa o caseinato. Debió advertirlo."
+  },
+  {
+    "consulta": "¿La cerveza tiene gluten?",
+    "respuesta": "Sí, la cerveza contiene gluten porque se elabora principalmente con granos de cebada.",
+    "precision": 0.6153846153846154,
+    "cobertura": 0.6153846153846154,
+    "f1": 0.61,
+    "correccion_factual": "si",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Correcta: sí tiene gluten por la cebada. Le faltó mencionar el trigo, que también usan muchas cervezas."
+  },
+  {
+    "consulta": "¿La leche sin lactosa sirve para alguien alérgico a la proteína de la leche?",
+    "respuesta": "No, la leche sin lactosa no es apta para quienes son alérgicos a sus proteínas.",
+    "precision": 0.6666666666666666,
+    "cobertura": 0.5882352941176471,
+    "f1": 0.62,
+    "correccion_factual": "si",
+    "completitud": "si",
+    "contradiccion": "no",
+    "nota": "Correcta. Deja claro que no es apta porque sigue teniendo la proteína, que es justo lo que dice la referencia."
+  },
+  {
+    "consulta": "¿La avena es segura para un celíaco?",
+    "respuesta": "La avena es segura para celíacos solo si está certificada como libre de gluten.",
+    "precision": 0.7142857142857143,
+    "cobertura": 0.6666666666666666,
+    "f1": 0.68,
+    "correccion_factual": "si",
+    "completitud": "parcialmente",
+    "contradiccion": "no",
+    "nota": "Correcta en lo principal: solo si está certificada. Le falta mencionar que un pequeño grupo tampoco tolera la avenina."
+  }
+]

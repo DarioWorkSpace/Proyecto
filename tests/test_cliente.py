@@ -1,9 +1,13 @@
 from unittest.mock import patch, Mock
 import pytest
 from src.consumir_gemini import enviar_peticion
-from cliente import con_reintento, consultar_modelo
-import cliente
+from src.cliente import con_reintento, consultar_modelo
+from src import cliente
 
+@pytest.fixture(autouse=True)
+def reiniciar_costo_total():
+    cliente.costo_total_sesion = 0
+    yield
 
 def test_enviar_peticion_credencial_invalida():
     respuesta_falsa = Mock(status_code=401)
@@ -51,7 +55,7 @@ def test_con_reintento_no_reintenta_value_error():
 def test_consultar_modelo_convierte_error():
     error_simulado = TimeoutError("simulado")
 
-    with patch("cliente.con_reintento", side_effect=error_simulado):
+    with patch("src.cliente.con_reintento", side_effect=error_simulado):
         with pytest.raises(RuntimeError):
             consultar_modelo("pregunta de prueba")
 
@@ -63,7 +67,3 @@ def test_registrar_costo_acumula():
     assert costo == cliente.COSTO_POR_1000_TOKENS
     assert cliente.costo_total_sesion == cliente.COSTO_POR_1000_TOKENS
 
-@pytest.fixture(autouse=True)
-def reiniciar_costo_total():
-    cliente.costo_total_sesion = 0
-    yield
