@@ -7,7 +7,7 @@ from langchain_core.prompts import ChatPromptTemplate #Plantilla
 
 load_dotenv()
 
-modelo = ChatGoogleGenerativeAI(model="gemini-3.6-flash" )
+modelo = ChatGoogleGenerativeAI(model="gemini-3.1-flash" )
 #respuesta = modelo.invoke("¿Que es un token?")
 #print(respuesta.content)
 
