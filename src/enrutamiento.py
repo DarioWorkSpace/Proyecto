@@ -8,7 +8,13 @@ from langchain_core.runnables import (RunnableBranch, RunnablePassthrough, Runna
 import logging #Generar un archivo de log con los errores que se presentan
 
 logging.basicConfig(
-    level=logging.WARNING
+    level=logging.WARNING,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    filename="error.log",
+    filemode="a",
+    encoding="utf-8",
+    force=True
 )
 logger = logging.getLogger(__name__)
 
@@ -25,8 +31,58 @@ paso_clasificacion = (
     plantilla_clasificacion
     | modelo
     | StrOutputParser()
-    | (lambda texto: texto.strip().lower()) #Elimina espacios y pasa a minúsculas
+    | RunnableLambda(lambda texto: texto.strip().lower()) #Elimina espacios y pasa a minúsculas
 )
+#Paso Clasificacion Agregado por Seba
+def paso_clasificacion(modelo):
+    return (
+        plantilla_clasificacion
+        | modelo
+        | StrOutputParser()
+        | RunnableLambda(lambda texto: texto.strip().lower())
+    )
+
+#Agregado por seba
+def construir_cadena_queja_segura(cadena_queja):
+	return cadena_queja.with_fallbacks([respuesta_generica])
+
+#Agregado por seba
+def construir_cadena_con_enrutamiento(
+    paso_clasificacion,
+    cadena_queja=None,
+    cadena_sugerencia=None,
+    cadena_pregunta=None,
+):
+    cadena_queja = cadena_queja or RunnablePassthrough()
+    cadena_sugerencia = cadena_sugerencia or RunnablePassthrough()
+    cadena_pregunta = cadena_pregunta or RunnablePassthrough()
+
+    paso_normalizado = paso_clasificacion | RunnableLambda(lambda t: t.strip().lower())
+
+    #Agregado por IA
+        # Si lo que me pasan es una cadena real de LangChain, la normalizo con |
+    # Si es un Mock del test, lo envuelvo en RunnableLambda para que lance el error
+    from langchain_core.runnables import Runnable
+    if isinstance(paso_clasificacion, Runnable):
+        paso_normalizado = paso_clasificacion | RunnableLambda(lambda t: t.strip().lower() if isinstance(t, str) else t)
+    else:
+        def clasificar_y_normalizar(x):
+            resultado = paso_clasificacion(x)
+            if hasattr(resultado, "content"):
+                resultado = resultado.content
+            return str(resultado).strip().lower()
+        paso_normalizado = RunnableLambda(clasificar_y_normalizar)
+
+
+    bifurcacion = RunnableBranch(
+        (lambda x: x["categoria"] == "queja", cadena_queja),
+        (lambda x: x["categoria"] == "sugerencia", cadena_sugerencia),
+        cadena_pregunta,
+    )
+    return (
+        RunnablePassthrough.assign(categoria=paso_normalizado)
+        | bifurcacion
+    )
 
 # mensaje_prueba = "Mi plato no llegó a tiempo y estaba frío."
 # clasificacion = paso_clasificacion.invoke(
@@ -69,9 +125,12 @@ bifurcacion = RunnableBranch(
 )
 
 #Fallback: cadena de respaldo. Captura las caídas de mi LLM (RateLimite, 401, APIConectionError, respuestas vacias))
+def fallback_con_log(x):
+    logger.warning("Cadena principal falló. Activando respuesta genérica")
+    return "Gracias por tu mensaje. Un miembro de nuestro equipo te va a responder pronto."
+
 respuesta_generica = RunnableLambda(
-    #Todo: log
-    lambda x: ("Gracias por tu mensaje. Un miembro de nuestro equipo te va a responder pronto.")
+    fallback_con_log
 )
 
 cadena_con_enrutamiento = (
@@ -79,13 +138,13 @@ cadena_con_enrutamiento = (
     | bifurcacion
 )
 
-cadena_robusta = cadena_con_enrutamiento.with_fallback([respuesta_generica])
+cadena_robusta = cadena_con_enrutamiento.with_fallbacks([respuesta_generica], exception_key="error")
 
 def procesar_mensaje_seguro(cadena, mensaje):
     try:
         return cadena.invoke({"mensaje": mensaje})
     except Exception as error:
-        #Todo: log
+        logger.error("Error procesando mensaje:%s", error)
         return "No pudimos procesar tu mensaje en este momento. Por favor, intenta de nuevo más tarde."
 
 if __name__ == "__main__":
