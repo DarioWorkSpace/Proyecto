@@ -60,7 +60,7 @@ def construir_cadena_con_enrutamiento(
     paso_normalizado = paso_clasificacion | RunnableLambda(lambda t: t.strip().lower())
 
     #Agregado por IA
-        # Si lo que me pasan es una cadena real de LangChain, la normalizo con |
+    # Si lo que me pasan es una cadena real de LangChain, la normalizo con |
     # Si es un Mock del test, lo envuelvo en RunnableLambda para que lance el error
     from langchain_core.runnables import Runnable
     if isinstance(paso_clasificacion, Runnable):
